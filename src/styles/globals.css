@@ -19,32 +19,32 @@
   }
 
   h1 {
-      @apply text-4xl;
-    }
+    @apply text-4xl;
+  }
 
-    h2 {
-      @apply text-3xl;
-    }
+  h2 {
+    @apply text-3xl;
+  }
 
-    h3 {
-      @apply text-2xl;
-    }
+  h3 {
+    @apply text-2xl;
+  }
 
-    h4 {
-      @apply text-xl;
-    }
+  h4 {
+    @apply text-xl;
+  }
 
-    h5 {
-      @apply text-lg;
-    }
+  h5 {
+    @apply text-lg;
+  }
 
-    h6 {
-      @apply text-base;
-    }
+  h6 {
+    @apply text-base;
+  }
 
-    p {
-      @apply text-sm tracking-normal;
-    }
+  p {
+    @apply text-sm tracking-normal;
+  }
 
   @screen xxs {
     h1 {
@@ -256,30 +256,47 @@
     }
   }
 
-  body {
-    @apply text-gray-mineshaft font-grotesk bg-gray;
-    letter-spacing: 0.03em;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-
   .primary {
     @apply text-blue;
   }
 
-  .flatbtn{
-    @apply text-sm lg:text-lg xl:text-xl 2xl:text-2xl hover:bg-[#000];
+  .secondary {
+    @apply text-pink;
   }
 
-  .btn {
-    @apply flex text-xs mx-auto md: mx-0 bg-pink text-white font-bold rounded uppercase px-4 justify-center items-center py-3 min-w-48 cursor-pointer;
+  .primary-hover {
+    @apply hover:bg-blue-100;
   }
 
-  .btn-border {
-    @apply flex text-xs mx-auto md: mx-0 text-pink font-bold rounded uppercase px-4 justify-center items-center py-3 min-w-48 cursor-pointer border border-pink;
+  .flatbtn {
+    @apply text-sm lg:text-lg xl:text-xl 2xl:text-2xl px-2 py-1;
+  }
+  .top {
+    @apply flex-col pb-2;
+  }
+  .bottom {
+    @apply flex-col-reverse pt-2;
+  }
+  .start {
+    @apply flex-row pr-2;
+  }
+  .end {
+    @apply flex-row-reverse pl-2;
   }
 
-  .btn:not(.btn--success) {
+  .btn-primary {
+    @apply flex bg-blue text-white rounded px-4 justify-center items-center py-3 min-w-48 cursor-pointer w-fit hover:opacity-80;
+  }
+
+  .btn-border-primary {
+    @apply flex text-xs text-blue font-bold rounded px-4 justify-center items-center py-3 min-w-48 cursor-pointer w-fit border border-blue hover:bg-blue-100;
+  }
+
+  .icon-btn-border-primary {
+    @apply flex text-xs text-blue font-bold rounded px-4 justify-center items-center py-3 min-w-48 cursor-pointer w-fit border border-blue hover:bg-blue-100;
+  }
+
+  .btn-border-primary .btn:not(.btn--success) {
     @apply bg-pink;
   }
 
@@ -291,98 +308,10 @@
     @apply bg-blue;
   }
 
-  .pretitle {
-    @apply font-medium text-xs leading-4 uppercase tracking-widest;
-  }
-
-  @screen md {
-    .pretitle {
-      @apply text-lg leading-6;
-    }
-  }
-
-  .title {
-    @apply font-extrabold;
-    @apply font-extrabold text-3xl tracking-wide;
-    line-height: 42px;
-  }
-
-  @screen md {
-    .title {
-      @apply font-extrabold text-4xl tracking-wide;
-      line-height: 52px;
-    }
-  }
-
-  .subtitle {
-    font-weight: 800;
-    font-size: 24px;
-    line-height: 120%;
-    letter-spacing: 0.2px;
-  }
-
-  .hero-image-effect {
-    background: rgba(47, 0, 234, 0.6);
-    mix-blend-mode: multiply;
-  }
-
-  .mobile {
-    @apply block md: hidden;
-  }
-
-  .desktop {
-    @apply hidden md: block;
-  }
-
-  .hyphens-auto {
-    hyphens: 'auto';
-  }
-
   .shadow-default {
     box-shadow: 0px 2px 4px #51515130, 0px 12px 32px #2c2c2c20;
-  }
-
-  @keyframes skeleton-pulse-slide {
-    from {
-      left: 0%;
-      transform: translateX(-100%);
-    }
-
-    to {
-      left: 100%;
-      transform: translateX(100%);
-    }
-  }
-
-  .skeleton {
-    @apply relative overflow-hidden;
-  }
-
-  .skeleton::after {
-    content: '';
-    @apply absolute left-0 w-16 -top-1/2;
-    height: 200%;
-    background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
-    animation: skeleton-pulse-slide infinite 1s;
   }
 }
 
 @tailwind components;
 @tailwind utilities;
-
-.render-html a {
-  /* @apply text-blue underline font-bold; */
-}
-
-.render-html > p > strong {
-  /* @apply text-sm leading-4 lg:text-base lg:leading-5 my-4 block; */
-}
-
-.render-html > ul li,
-.render-html > p {
-  /* @apply text-sm leading-4 lg:text-base lg:leading-5 my-2; */
-}
-
-.render-html > ul li::marker {
-  /* @apply text-black text-sm; */
-}

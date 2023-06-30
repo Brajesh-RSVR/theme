@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import { PropsWithChildren } from 'react';
 
 export interface FlatBtnProps {
@@ -7,5 +6,5 @@ export interface FlatBtnProps {
 }
 
 export const FlatBtn = ({ title, color}: PropsWithChildren<FlatBtnProps>) => {
-  return <button className={`${color} flatbtn`}>{title}</button>;
+  return <button className={`${color} flatbtn primary-hover`}>{title}</button>;
 };
