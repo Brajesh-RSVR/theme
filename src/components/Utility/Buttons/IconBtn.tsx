@@ -1,11 +1,15 @@
 import { PropsWithChildren } from 'react';
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 export interface IconBtnTextProps {
   title: string;
   color: string;
   iconColor?: string;
   iconPosition?: 'top' | 'bottom' | 'start' | 'end';
-  spacing?: 1 | 2 | 3 | number;
+  spacing?: 1 | 2 | 3 | 4 | number;
+  disable?: Boolean;
+  loading?: Boolean;
+  textSize?: number;
 }
 
 export const IconBtnText = ({
@@ -15,27 +19,33 @@ export const IconBtnText = ({
   iconPosition,
   iconColor = 'primary',
   spacing,
+  disable = false,
+  loading = false,
+  textSize = 1,
 }: PropsWithChildren<IconBtnTextProps>) => {
-
-    const paddingApply = () => {
+  const paddingApply = () => {
     if (iconPosition === 'top') {
-      return `pb-${spacing}`;
+      return `marbt-${spacing}`;
     } else if (iconPosition === 'bottom') {
-      return `pt-${spacing}`;
+      return `marto-${spacing}`;
     } else if (iconPosition === 'start') {
-      return `pr-${spacing}`;
+      return `marri-${spacing}`;
     } else if (iconPosition === 'end') {
-      return `pl-${spacing}`;
+      return `marle-${spacing}`;
     }
   };
 
+  const fontSize = () => {
+    return textSize * 16;
+  }
+
   return (
-    <button className={`${color} btn-border-primary ${iconPosition}`}>
-      <span
-        className={`${iconColor} ${paddingApply()} iconbtn `}
-      >
-        {children}
-      </span>
+    <button className={`${color} ${disable && 'disable'} btn-border-primary ${iconPosition} `} style={{ fontSize: fontSize()}}>
+      {loading ? (
+        <span className={`${iconColor} ${paddingApply()} animate-spin iconbtn`}><AiOutlineLoading3Quarters /></span>
+      ) : (
+        <span className={`${iconColor} ${paddingApply()} iconbtn`}>{children}</span>
+      )}
       {title}
     </button>
   );
