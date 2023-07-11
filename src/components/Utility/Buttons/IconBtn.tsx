@@ -42,7 +42,7 @@ export const IconBtnText = ({
   return (
     <button className={`${color} ${disable && 'disable'} btn-border-primary ${iconPosition} `} style={{ fontSize: fontSize()}}>
       {loading ? (
-        <span className={`${iconColor} ${paddingApply()} animate-spin iconbtn`}><AiOutlineLoading3Quarters /></span>
+        <span className={`${paddingApply()} animate-spin`}><AiOutlineLoading3Quarters /></span>
       ) : (
         <span className={`${iconColor} ${paddingApply()} iconbtn`}>{children}</span>
       )}

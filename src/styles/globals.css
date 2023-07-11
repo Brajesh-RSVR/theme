@@ -268,6 +268,12 @@
     @apply text-blue;
   }
 
+  .primary-bg {
+    @apply bg-blue-light;
+  }
+
+
+
   .secondary {
     @apply text-pink;
   }
@@ -316,12 +322,15 @@
     @apply bg-blue;
   }
 
-  .disable {
-    @apply bg-transparent text-gray-dark cursor-default hover:bg-transparent;
-  }
-
   .shadow-default {
     box-shadow: 0px 2px 4px #51515130, 0px 12px 32px #2c2c2c20;
+  }
+
+  .disable {
+    @apply flex bg-[rgba(0,0,0,0.1)] border-none rounded px-4 justify-center items-center py-3 min-w-48 cursor-none w-fit text-gray-400 cursor-default hover:bg-[rgba(0,0,0,0.1)];
+  }
+  .flat-disable {
+    @apply cursor-none text-gray-200 cursor-default hover:bg-transparent;
   }
 }
 
@@ -380,4 +389,6 @@
   margin-right: 8px;
 }
 
-
+.primary-bg-accent {
+  @apply bg-blue;
+}
