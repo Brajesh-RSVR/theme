@@ -28,6 +28,7 @@ export const CardContainer = ({
   color,
   alphaValue,
 }: PropsWithChildren<CardContainerProps>) => {
+
   function hexToRgb(hex: string): string | null {
     // Remove the '#' symbol if present
     hex = hex.replace('#', '');

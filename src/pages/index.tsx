@@ -7,7 +7,9 @@ import { NormalBtn } from '@/components/Utility/Buttons/NormalBtn';
 import { AiFillAndroid } from 'react-icons/ai';
 import { CardContainer } from '../components/Utility/Card/CardContainer';
 import { ToggleButton } from '@/components/Utility/Buttons/ToggleBtn';
-import { GroupTabButton } from '@/components/Utility/TabButton/GroupTabButton';
+import { TabContainer } from '@/components/Utility/TabContainer/GroupTabButton';
+import { GroupTabButton } from '@/components/Utility/GroupTabButton/GroupTabButton';
+import { ProblemShow } from '@/components/Utility/problem';
 
 export default function Home() {
   const handleToggleChange = (checked: boolean) => {
@@ -47,9 +49,16 @@ export default function Home() {
       </CardContainer>
 
       <br />
-      <ToggleButton onChange={handleToggleChange} themeColor="primary-bg" isLabel/>
+      <ToggleButton onChange={handleToggleChange} themeColor="primary-bg" isLabel />
       <br />
-      <GroupTabButton />
+      <TabContainer primaryColor="ffffff" secColor="c9c9c9" activeBar="ff0000"
+      // title={['test', 'test2', 'test3', 'test4', 'test5']}
+      />
+      <GroupTabButton tabRadius={4} />
+      <div style={{padding: 25, marginTop: 50, marginBottom: 50}}>
+
+      <ProblemShow />
+      </div>
     </MainLayout>
   );
 }
